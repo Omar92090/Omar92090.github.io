@@ -8,8 +8,20 @@ function showMessage() {
         "You make my world brighter! ✨",
         "I can’t wait to see you again! 😘",
         "You are my everything! 💖",
-        "I hope you don’t marry your 2-year-old cousin. 😂" 
+        "I hope you don’t marry your 2-year-old cousin. 😂"
     ];
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("love-message").innerText = randomMessage;
+    
+    const messageElement = document.getElementById("love-message");
+
+    // Fade out effect
+    messageElement.style.opacity = 0;
+
+    setTimeout(() => {
+        // Change message
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        messageElement.innerText = randomMessage;
+
+        // Fade in effect
+        messageElement.style.opacity = 1;
+    }, 500); // Delay to make the transition smooth
 }
